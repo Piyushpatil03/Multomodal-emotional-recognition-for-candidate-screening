@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Fira Sans Condensed' rel='stylesheet'>
+    <title>Interview Simulator</title>
+    <script>
+      function validateForm() {
+        var x = document.forms["myform"]["message"].value;
+        if (x == "" || x == null) {
+          alert("Please complete the answer");
+          return false;
+        }
+      }
+      </script>
+
+  </head>
+  <body>
+    <a href="/">
+      <img src = "/static/text_head.png" width="100%">
+    </a>
+
+{% block body %}
+
+<br>
+
+<br>
+
+<div class="row">
+  <div class="column" id="left-col" align="center">
+
+
+  <blockquote>
+    <p class="quotation" style="font-family:'Fira Sans Condensed', sans-serif; font-size: 20px;">Tell us about the last time you showed leadership.</p>
+  </blockquote> 
+
+  <form name="myform" action="./text_predict.html" onsubmit="return validateForm()" method="POST">
+      <textarea style="padding: 20px; margin-top: 10px;" cols="70" rows ="20" name="message" value="{{ mes }}"></textarea><br><br>
+    <input type="submit" value="Start Analysis">
+  </form>
+  <br>
+</div>
+ <div class="column" align="center">
+    <blockquote>
+    <p class="quotation" style="font-family:'Fira Sans Condensed', sans-serif; font-size: 20px;">Importance of Big Five personality traits</p>
+  </blockquote> 
+  <br><br>
+    <p class="p2">The Big Five personality test measures the five personality factors that psychologists have determined 
+      are core to our personality makeup.</p><br><br>
+      <div class="p2">
+        <p class="p2">Psychological Traits : </p>
+          <ul>
+          <li class="p2">Openness - How open a person is to new ideas and experiences</li>
+          <li class="p2">Conscientiousness - How goal-directed, persistent, and organized a person is</li>
+          <li class="p2">Extraversion - How much a person is energized by the outside world</li>
+          <li class="p2">Agreeableness - How much a person puts others' interests and needs ahead of their own</li>
+          <li class="p2">Neuroticism - How sensitive a person is to stress and negative emotional triggers</li>
+        </ul>
+      </div>
+    <!--accept="application/pdf"-->
+</div>
+</div>
+
+
+{% endblock %}
+
+
+ <br>
+    
+    <form>
+    <input type="button" value="Back" onclick="history.go(-1)">
+  </form>
+  <br>
+  </body>
+</html>

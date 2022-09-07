@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Interview Simulator</title>
+
+  </head>
+  <body>
+    <a href="/">
+      <img src = "/static/head.png" width="100%">
+    </a>
+    <br>
+
+ {% block body %}
+
+  
+  <div class="row">
+
+    <!--
+      Text Interview presentation
+      -->
+      <div class="column_home" id="left-col" align="center"><br>
+        <img src = "/static/text.png" width="100%">
+          <div style="width:70%; text-align:justify; align-content:center; display:inline-block;">
+            <p class="p2"> Use the text interview simulator and get a feedback on how our algorithm interprets your psychological traits.</p>
+            <br>
+            <p class="p2"> You will be provided a feedback on your Big Five Psychological traits, which include :
+            <ul class="p2">
+              <li class="p2">Openness</li>
+              <li class="p2">Conscientiousness</li>
+              <li class="p2">Extraversion</li>
+              <li class="p2">Agreeableness</li>
+              <li class="p2">Neuroticism</li>
+          </ul>
+          <br>
+          </div>
+      </div>
+
+<!--
+  Video Interview presentation
+  -->
+      <div class="column_home" id="left-col" align="center">
+        <img src = "/static/video.png" width="100%">
+        <div style="width:70%; text-align:justify; align-content:center; display:inline-block;">
+          <p class="p2"> Use the video interview simulator and get a feedback on how our algorithm interprets your facial emotions.</p>
+          <br>
+          <p class="p2"> You will be provided a feedback on your facial emotions such as :
+          <ul class="p2">
+            <li class="p2">Anger</li>
+            <li class="p2">Happiness</li>
+            <li class="p2">Fear</li>
+            <li class="p2">Sadness</li>
+            <li class="p2">Surprise</li>
+            <li class="p2">Disgust</li>
+          </ul>
+          <br>
+          <br>
+        </div>
+      </div>
+
+
+      
+
+  </div>
+
+
+  <div class="row">
+    <!--
+     Text Interview button
+     -->
+    <div class="column_home" id="left-col" align="center">
+        <form action="./text.html" method="get" align="center">
+          <input type="submit" name="text" value="Text Interview" align="center">
+        </form>
+    </div>
+
+
+
+    <!--
+    Video Interview button
+    -->
+     <div class="column_home" id="left-col" align="center">
+         <form action="./video_start.html" method="get" align="center">
+         <input type="submit" name="video" value="Video Interview" align="center">
+       </form>
+     </div>
+
+</div>
+    
+
+<br>
+<br>
+<br>
+
+    {% endblock %}
+
+  </body>
+</html>

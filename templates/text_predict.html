@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Fira Sans Condensed' rel='stylesheet'>
+    <title>Interview Simulator</title>
+
+  </head>
+  <body>
+    <a href="/">
+      <img src = "/static/text_head.png" width="100%">
+    </a>
+
+{% block body %}
+
+<div class="row">
+    <br><br>
+    <h1 style="font-family:'Fira Sans Condensed', sans-serif; color:green; font-size: 40px;">THE BIG FIVE PERSONALITY TEST</h1>
+  
+    <br>
+     <br>
+    <div class="column_home" align="left">
+        <h2 class="p3">Your Personality Traits score :  </h2>
+        <br>
+        <p class="p3">This Big Five assessment measures your scores on five major dimensions of personality: Openness, Conscientiousness, Extraversion, 
+            Agreeableness, and Neuroticism (sometimes abbreviated OCEAN). Check out your scores on each of the five dimensions 
+            below, then read on to discover what each score means.</p>
+            <br>
+        
+        <div>
+          <h3 class="p3">Psychological Traits : </h3>
+          <br>
+          <h4 class="p3"> {{predictions}} </h4>
+            <ul><b>
+            <li class="list2">Extraversion : {{predictions[0]}}</li>
+            <li class="list2">Neuroticism : {{predictions[1]}}</li>
+            <li class="list2">Agreeableness : {{predictions[2]}}</li>
+            <li class="list2">Conscientiousness : {{predictions[3]}}</li>
+            <li class="list2">Openness : {{predictions[4]}}</li></b>
+          </ul>
+        </div>
+
+        <h3 class="p3">Your Traits in Depth: </h3><br>
+    
+        {% if predictions[0]==1 %}
+        <p class="list2" style="font-size:18px">High Extraversion score indicates <br>- Easily relates to others <br>- More Emotional <br>- Dominates Society </p>
+            <br>
+        {% endif %}
+
+        {% if predictions[1]==1 %}
+        <p class="list2" style="font-size:18px">High Neuroticism score indicates <br>- May think negatively <br>- May express negative emotions</p>
+            <br>
+        {% endif %}
+
+        {% if predictions[2]==1 %}
+        <p class="list2" style="font-size:18px">High Agreeableness score indicates <br>- More likely to comply with rules and regulations <br>- Easier to like and admire</p>
+            <br>
+        {% endif %}
+
+        {% if predictions[3]==1 %}
+        <p class="list2" style="font-size:18px">High Conscientiousness score indicates <br>- More effect <br>- More drive <br>- Better discipline and organization</p>
+            <br>
+        {% endif %}
+
+        {% if predictions[4]==1 %}
+        <p class="list2" style="font-size:18px">High Openness score indicates <br>- More creativity <br>- More flexibility <br>- More eagerness to learn</p>
+            <br>
+        {% endif %}
+
+
+        <h3 class="p3">Workplace Behaviour Effects of Your Traits: </h3><br>
+    
+        {% if predictions[0]==1 %}
+        <p class="p3" style="font-size:18px">- Better Job Performance, Strong leadership ability, Less likely to leave </p>
+
+        {% endif %}
+
+        {% if predictions[1]==1 %}
+        <p class="p3" style="font-size:18px">- Lower job satisfaction, Higher stress level</p>
+         
+        {% endif %}
+
+        {% if predictions[2]==1 %}
+        <p class="p3" style="font-size:18px">- Better on-the-job behaviour</p>
+            
+        {% endif %}
+
+        {% if predictions[3]==1 %}
+        <p class="p3" style="font-size:18px">- Inherent leadership skills, Less likely to leave</p>
+         
+        {% endif %}
+
+        {% if predictions[4]==1 %}
+        <p class="p3" style="font-size:18px">- Higher job satisfaction, Easily adaptable</p>
+        
+        {% endif %}
+
+
+
+        <br><br>
+        {% if predictions[0]==1 %}
+        <div class="container">
+        <div class="skills more">Better Job Performance</div><br>
+        <div class="skills more">Strong leadership skills</div><br>
+        <div class="skills less">Less likely to leave</div><br>
+        </div>
+        {% endif %}
+
+
+        {% if predictions[1]==1 %}
+        <div class="container">
+        <div class="skills less">Lower job satisfaction</div><br>
+        <div class="skills more">Higher stress level</div><br>
+        </div>
+        {% endif %}
+
+
+        {% if predictions[2]==1 %}
+        <div class="container">
+        <div class="skills more">Better on-the-job behaviour</div><br>
+        </div>
+        {% endif %}
+
+
+        {% if predictions[4]==1 %}
+        <div class="container">
+        <div class="skills more">Easily adaptable</div><br>
+        </div>
+        {% endif %}
+
+        
+    </div>
+
+
+
+
+
+  
+    <div class="column_home" id="left-col" align="left">
+        <h2 class="simple-right">Check out what each trait says about you:  </h2>
+        <br>
+        <p class="simple-right">1. Openness: This trait is often referred to as the depth of someones mental experiences, or 
+            imagination. It encompasses someones desire to try new things, be open and think creatively. People who score high
+            in this area are generally artistic and curious, while those who score low tend to be conventional and stay in their
+            comfort zones.</p><br>
+        <p class="simple-right">2. Conscientiousness: This trait measures a persons reliability and dependability. Someone who 
+            scores higher in this area is more goal-oriented, tends to control impulses, and is usually very organized. They are 
+            likely to see success in school and excel as a leader. Those who score lower in this area are more likely to be 
+            impulsive and procrastinate on assignments.</p><br>
+        <p class="simple-right">3. Extroversion: The extroversion trait indicates how social and talkative a person may be. 
+            Those scoring high in extroversion are generally more assertive, socially confident, and recharge from interacting 
+            with people, while those who score lower are more likely to seek solitude and introspection.</p><br>
+        <p class="simple-right">4. Agreeableness: Agreeableness shows how well someone can get along with other people. 
+            People scoring high in this trait are usually well-liked, sympathetic, and affectionate, and those who score 
+            lower are perceived as blunt, rude, and sarcastic.</p><br>
+        <p class="simple-right">5. Neuroticism: It measures how well a person can control emotions like anxiety and sadness. Scoring high in 
+            this area indicates that someone may be prone to those emotions and may also have low self-esteem. Those receiving a low 
+            score are probably more confident and adventurous.</p>
+
+            <br>
+        <br>
+      <br>
+    </div>
+  
+  </div>
+
+
+{% endblock %}
+
+
+ <br>
+    
+    <form>
+    <input type="button" value="Back" onclick="history.go(-1)">
+  </form>
+  <br>
+  </body>
+</html>

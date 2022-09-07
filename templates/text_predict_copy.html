@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Interview Simulator</title>
+
+  </head>
+  <body>
+    <a href="/">
+      <img src = "/static/text_head.png" width="100%">
+    </a>
+
+    {% block body %}
+
+    <div class="row">
+      <h2><i>Perceived Psychological Traits</i></h2>
+    
+      <br>
+       <br>
+      <div class="column_home" id="left-col" align="center">
+        <div>
+        <div class="legend1">
+        <div class="legend1"> <p class="country-name"><span class="key-dot you"></span>You</p> </div>
+        <div class="legend1"> <p class="country-name"><span class="key-dot others"></span>Other candidates</p> </div>
+        </div>
+          <div id="histo"></div>
+        </div>
+      </div>
+    
+      <div class="column_home" id="left-col" align="center">
+          <br>
+          <p>Your most visible trait is : </p>
+            <br>
+            <h4> {{predictions}} </h4>
+            <br>
+            <div class="parent">
+              <p>Psychological Traits : </p>
+                <ul align="left">
+                <li>Extraversion : {{predictions[0]}}%</li>
+                <li>Neuroticism : {{predictions[1]}}%</li>
+                <li>Agreeableness : {{predictions[2]}}%</li>
+                <li>Conscientiousness : {{predictions[3]}}%</li>
+                <li>Openness : {{predictions[4]}}%</li>
+              </ul>
+          </div>
+          <br>
+        <br>
+      </div>
+    
+      <div class="column_home" id="left-col" align="center">
+        <div class="parent">
+            <p>Most common words : </p>
+              <ul align="left">
+                 {% for el in common_words %}
+                    <li>{{el}}</li>
+                  {% endfor %}
+              </ul>
+          </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+
+ <br>
+    
+    <form>
+    <input type="button" value="Back" onclick="history.go(-1)">
+  </form>
+  <br>
+  </body>
+</html>
